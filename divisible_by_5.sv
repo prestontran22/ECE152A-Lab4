@@ -21,6 +21,7 @@ always_comb begin
     state_d = REMAINDER_0; 
     if (serial_i) begin // (2 * num + 1) % 5
         case (state_q)
+            default: state_d = REMAINDER_0;
             REMAINDER_0: state_d = REMAINDER_1;
             REMAINDER_1: state_d = REMAINDER_3;
             REMAINDER_2: state_d = REMAINDER_0;
@@ -29,6 +30,7 @@ always_comb begin
         endcase
     end else begin // (2 * num + 0) % 5
         case (state_q)
+            default: state_d = REMAINDER_0;
             REMAINDER_0: state_d = REMAINDER_0;
             REMAINDER_1: state_d = REMAINDER_2;
             REMAINDER_2: state_d = REMAINDER_4;
