@@ -10,7 +10,7 @@ typedef enum logic [2:0] {
     REMAINDER_1,
     REMAINDER_2,
     REMAINDER_3,
-    REMAINDER_4,
+    REMAINDER_4
 } state_t;
 state_t state_d, state_q = REMAINDER_0;
 
